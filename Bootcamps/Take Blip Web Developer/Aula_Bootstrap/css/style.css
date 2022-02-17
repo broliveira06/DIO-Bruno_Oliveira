@@ -2,17 +2,37 @@ body{
     font-family: arial,serif;
 }
 
-.navbar{
-    background-color:#0B2161;
+body .navbar{
+    background-color:#b0e7bc;
+    padding:0;
 }
+
 .img_logo{
     padding:15px;
 }
 
 .quem-somos{
-    background-color:#F2F2F2;
+    background-color:#c3c1d8fa;
+    color:green;
+    text-decoration:double;
         
 }
 .margin{
     padding-bottom:50px;
+    padding-top:10px;
+}
+
+.parceiros{
+    background-color:#A9F5F2;
+}
+
+.img_parceiros{
+    height:500px;
+    align-items:left;
+    width:500px;
+    margin-top:0;   
+}
+.bg-footer{
+    background-color:black;
+    color:white;
 }
