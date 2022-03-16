@@ -9,12 +9,13 @@
     <script src="/Estrutura de Projeto/assets/js/scripts.js"></script>
 </head>
 <body>
-    <h1>Olá, mundo!</h1>
-    <p>Este é o meu primeiro projeto Javascript.</p>
-    <div id="counter">
-        <button name="subtrair" onclick="decrement()">-</button>
-        <span id="currentNumber">0</span>
-        <button name="adicionar" onclick="increment()">+</button>
+    <h1>To-do list</h1>
+    <div id="list">
+        <form id="task-form">
+            <input id="task-input" name="tarefa" type="text" placeholder="Digite aqui sua tarefa" />
+            <button type="submit">Adicionar</button>
+        </form>
+        <div id="tasks"></div>
     </div>
     <script src="/Projeto-Contador/assets/js/scripts.js"></script>
 </body>

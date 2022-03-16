@@ -1,31 +1,29 @@
-var currentNumberWarpper = document.getElementById('currentNumber');
-var currentNumber = 0;
+const form = document.getElementById('task-form');
+const taskList = document.getElementById('tasks');
 
-var mais = document.getElementById('adicionar');
-var menos = document.getElementById('subtrair');
+form.onsubmit = function (e) {
+	e.preventDefault();
+	const inputField = document.getElementById('task-input');
+	addTask(inputField.value);
+	form.reset();
+};
 
-mais.addEventListener("click", increment);
-menos.addEventListener("click", decrement);
+function addTask(description) {
+	const taskContainer = document.createElement('div');
+	const newTask = document.createElement('input');
+	const taskLabel = document.createElement('label');
+	const taskDescriptionNode = document.createTextNode(description);
 
-    function increment(){
-        if(currentNumber < -1){
-            currentNumberWarpper.style.color = 'red';
-        }else{
-            currentNumberWarpper.style.color = 'green'
-        } 
-        if(currentNumber < 11 ){
-            currentNumber = currentNumber + 1;
-            currentNumberWarpper.innerHTML = currentNumber;
+	newTask.setAttribute('type', 'checkbox');
+	newTask.setAttribute('name', description);
+	newTask.setAttribute('id', description);
 
-        }
-    }
+	taskLabel.setAttribute('for', description);
+	taskLabel.appendChild(taskDescriptionNode);
 
-    function decrement(){
-        if(currentNumber <= 0 ){
-            currentNumberWarpper.style.color = 'red';
-        }else{
-            currentNumberWarpper.style.color = 'black';
-        }
-            currentNumber =  currentNumber = currentNumber -1;
-            currentNumberWarpper.innerHTML = currentNumber;
-       }
+	taskContainer.classList.add('task-item');
+	taskContainer.appendChild(newTask);
+	taskContainer.appendChild(taskLabel);
+
+	taskList.appendChild(taskContainer);
+}
